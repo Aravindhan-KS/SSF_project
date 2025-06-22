@@ -1,3 +1,5 @@
+import '../styles/pages.css';
+
 const BestPractices = () => {
   const practices = [
     {
@@ -63,28 +65,28 @@ const BestPractices = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-16">
-      <div className="container mx-auto px-4">
+    <div className="page-container">
+      <div className="content-container">
         <div>
-          <h1 className="text-4xl font-bold mb-8">Server-Side Best Practices</h1>
-          <div className="space-y-12">
+          <h1 className="page-title">Server-Side Best Practices</h1>
+          <div className="section-container">
             {practices.map((section) => (
               <div
                 key={section.category}
               >
-                <h2 className="text-3xl font-semibold mb-6 text-blue-400">
+                <h2 className="section-title">
                   {section.category}
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid-container three-columns">
                   {section.items.map((item) => (
                     <div
                       key={item.title}
-                      className="bg-gray-800 p-6 rounded-lg"
+                      className="card"
                     >
-                      <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                      <p className="text-gray-300 mb-4">{item.description}</p>
-                      <div className="text-gray-400 text-sm">
-                        <strong className="text-gray-300">Example: </strong>
+                      <h3 className="card-title">{item.title}</h3>
+                      <p className="card-description">{item.description}</p>
+                      <div className="example-text">
+                        <strong>Example: </strong>
                         {item.example}
                       </div>
                     </div>

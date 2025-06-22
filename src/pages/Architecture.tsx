@@ -1,3 +1,5 @@
+import '../styles/pages.css';
+
 const Architecture = () => {
   const architecturePatterns = [
     {
@@ -27,30 +29,30 @@ const Architecture = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-16">
-      <div className="container mx-auto px-4">
+    <div className="page-container">
+      <div className="content-container">
         <div>
-          <h1 className="text-4xl font-bold mb-8">Server Architecture Patterns</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <h1 className="page-title">Server Architecture Patterns</h1>
+          <div className="grid-container two-columns">
             {architecturePatterns.map((pattern) => (
               <div
                 key={pattern.title}
-                className="bg-gray-800 p-6 rounded-lg"
+                className="card"
               >
-                <h2 className="text-2xl font-semibold mb-4">{pattern.title}</h2>
-                <p className="text-gray-300 mb-4">{pattern.description}</p>
-                <div className="grid grid-cols-2 gap-4">
+                <h2 className="card-title">{pattern.title}</h2>
+                <p className="card-description">{pattern.description}</p>
+                <div className="pros-cons-grid">
                   <div>
-                    <h3 className="text-green-400 font-semibold mb-2">Pros</h3>
-                    <ul className="list-disc list-inside text-gray-400">
+                    <h3 className="pros-title">Pros</h3>
+                    <ul className="list">
                       {pattern.pros.map((pro) => (
                         <li key={pro}>{pro}</li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-red-400 font-semibold mb-2">Cons</h3>
-                    <ul className="list-disc list-inside text-gray-400">
+                    <h3 className="cons-title">Cons</h3>
+                    <ul className="list">
                       {pattern.cons.map((con) => (
                         <li key={con}>{con}</li>
                       ))}

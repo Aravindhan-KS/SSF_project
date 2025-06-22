@@ -1,3 +1,5 @@
+import '../styles/pages.css';
+
 const Fundamentals = () => {
   const topics = [
     {
@@ -23,19 +25,19 @@ const Fundamentals = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-16">
-      <div className="container mx-auto px-4">
+    <div className="page-container">
+      <div className="content-container">
         <div>
-          <h1 className="text-4xl font-bold mb-8">Server-Side Fundamentals</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <h1 className="page-title">Server-Side Fundamentals</h1>
+          <div className="grid-container two-columns">
             {topics.map((topic) => (
               <div
                 key={topic.title}
-                className="bg-gray-800 p-6 rounded-lg"
+                className="card"
               >
-                <h2 className="text-2xl font-semibold mb-4">{topic.title}</h2>
-                <p className="text-gray-300 mb-4">{topic.description}</p>
-                <ul className="list-disc list-inside text-gray-400">
+                <h2 className="card-title">{topic.title}</h2>
+                <p className="card-description">{topic.description}</p>
+                <ul className="list">
                   {topic.items.map((item) => (
                     <li key={item}>{item}</li>
                   ))}

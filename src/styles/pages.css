@@ -1,0 +1,246 @@
+/* Global Styles */
+:root {
+  --primary-bg: #111827;
+  --secondary-bg: #1f2937;
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --accent-blue: #60a5fa;
+  --accent-green: #34d399;
+  --accent-red: #f87171;
+  --gradient-start: #60a5fa;
+  --gradient-end: #34d399;
+}
+
+/* Basic Reset and Layout */
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page Layout */
+.page-container {
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+  padding: 4rem 0;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+/* Navigation */
+.navbar {
+  background-color: var(--secondary-bg);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--accent-blue);
+}
+
+/* Grid Layouts */
+.grid-container {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-container.two-columns {
+  grid-template-columns: 1fr;
+}
+
+.grid-container.three-columns {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-container.two-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-container.three-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--secondary-bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.card:hover {
+  border-color: var(--accent-blue);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.card-description {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Pros & Cons */
+.pros-cons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.pros-title {
+  color: var(--accent-green);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.cons-title {
+  color: var(--accent-red);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.list {
+  list-style-type: disc;
+  list-style-position: inside;
+  color: var(--text-tertiary);
+}
+
+.section-title
+{
+  color: var(--text-primary);
+}
+
+.example-text {
+  background-color: var(--secondary-bg);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: var(--text-secondary);
+  overflow-x: auto;
+}
+/* Home Page */
+.hero-section {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  line-height: 1.7;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.features-grid .feature-card {
+  background-color: var(--secondary-bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-color: var(--accent-blue);
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent-blue);
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: var(--text-tertiary);
+  line-height: 1.6;
+}
+
+.feature-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}

@@ -1,15 +1,8 @@
-import { motion } from 'framer-motion';
-
 const Home = () => {
   return (
     <div className="home-container">
       <div className="content">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="hero-section"
-        >
+        <div className="hero-section">
           <h1>Server-Side Engineering</h1>
           <p className="hero-description">
             Explore the fundamentals of server-side engineering, from basic concepts
@@ -37,7 +30,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

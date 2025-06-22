@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 const BestPractices = () => {
   const practices = [
     {
@@ -67,25 +65,18 @@ const BestPractices = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white py-16">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
+        <div>
           <h1 className="text-4xl font-bold mb-8">Server-Side Best Practices</h1>
           <div className="space-y-12">
-            {practices.map((section, sectionIndex) => (
-              <motion.div
+            {practices.map((section) => (
+              <div
                 key={section.category}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: sectionIndex * 0.2 }}
               >
                 <h2 className="text-3xl font-semibold mb-6 text-blue-400">
                   {section.category}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {section.items.map((item, itemIndex) => (
+                  {section.items.map((item) => (
                     <div
                       key={item.title}
                       className="bg-gray-800 p-6 rounded-lg"
@@ -99,10 +90,10 @@ const BestPractices = () => {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
